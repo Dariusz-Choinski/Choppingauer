@@ -1,0 +1,2 @@
+class ShoppingCache < ApplicationRecord
+end
