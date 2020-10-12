@@ -33,5 +33,11 @@ module BarcodeApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.serve_static_files = false
+    config.after_initialize do
+      ShoppingCache.delete_all
+      File.delete("#{Rails.root}/tmp/print_devices/lcd") if File.exist?("#{Rails.root}/tmp/print_devices/lcd")
+      File.delete("#{Rails.root}/tmp/print_devices/printer") if File.exist?("#{Rails.root}/tmp/print_devices/printer")
+    end
   end
 end

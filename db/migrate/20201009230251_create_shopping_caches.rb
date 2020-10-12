@@ -2,7 +2,6 @@ class CreateShoppingCaches < ActiveRecord::Migration[6.0]
   def change
     create_table :shopping_caches do |t|
       t.string :name
-      t.string :barcode
       t.integer :price
 
       t.timestamps
