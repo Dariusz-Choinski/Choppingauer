@@ -25,12 +25,12 @@ RSpec.describe ShoppingExit do
     expect(file_driver).to have_received(:write).with(:printer, '0000000000')
   end
 
-  it 'print article name and price to printer' do
+  it 'print article 1 name and price to printer' do
     described_class.call
     expect(file_driver).to have_received(:write).with(:printer, 'XYZ: 7')
   end
 
-  it 'print article name and price to printer' do
+  it 'print article 2 name and price to printer' do
     described_class.call
     expect(file_driver).to have_received(:write).with(:printer, 'ABC: 3')
   end

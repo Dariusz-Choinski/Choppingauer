@@ -18,7 +18,7 @@ RSpec.describe FileDriver do
     expect(text).to eq("test\n")
   end
 
-  it '"0000000000" clear printer buffer (file)' do
+  it 'write "0000000000" to clear printer buffer (file)' do
     described_class.write(:printer, '0000000000')
     text = File.read(dir + 'printer')
     expect(text).to be_empty
