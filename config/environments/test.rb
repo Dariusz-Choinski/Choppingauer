@@ -46,4 +46,6 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+  config.print_devices_path = "#{Rails.root}/spec/tmp/print_devices/"
 end

@@ -35,9 +35,10 @@ module BarcodeApi
     config.api_only = true
     config.serve_static_files = false
     config.after_initialize do
-      ShoppingCache.delete_all
+      ShoppingCache.delete_all if ActiveRecord::Base.connection.table_exists? 'shopping_caches'
       File.delete("#{Rails.root}/tmp/print_devices/lcd") if File.exist?("#{Rails.root}/tmp/print_devices/lcd")
       File.delete("#{Rails.root}/tmp/print_devices/printer") if File.exist?("#{Rails.root}/tmp/print_devices/printer")
     end
+    config.print_devices_path = "#{Rails.root}/tmp/print_devices/"
   end
 end
