@@ -1,14 +1,11 @@
-module PrintDevice
+module Print
   def print(object, device)
     if (object.is_a?(String))
-      #"#{device.to_s.capitalize}Controller".constantize
       Object.const_get("#{device.to_s.capitalize}Controller")
-        .print(object)
-  Object.const_get("ClassName")
-    elsif (object.is_a?(Article))
-      #"#{device.to_s.capitalize}Controller".constantize
+        .print(device, object)
+    elsif (object.is_a?(Article) || object.is_a?(ShoppingCache))
       Object.const_get("#{device.to_s.capitalize}Controller")
-        .print("#{object.name}: #{object.price.to_s}")
+        .print(device, "#{object.name}: #{object.price.to_s}")
     end
   end
 end

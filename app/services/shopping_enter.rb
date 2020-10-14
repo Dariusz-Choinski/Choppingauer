@@ -1,5 +1,5 @@
 class ShoppingEnter
-  extend PrintDevice
+  extend Print
 
   def self.call(barcode)
     article = Article.find_by_barcode(barcode)
