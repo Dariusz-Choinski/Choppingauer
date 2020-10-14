@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Print
   def print(object, device)
     if object.is_a?(String)

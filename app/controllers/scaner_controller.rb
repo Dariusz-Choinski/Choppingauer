@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ScanerController < ApplicationController
   def scan
     ShoppingEnter.call(params[:barcode])

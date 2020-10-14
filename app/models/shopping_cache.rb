@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # cache storage is defined as parent class
 class ShoppingCache < DbCache::Shopping
   # TODO

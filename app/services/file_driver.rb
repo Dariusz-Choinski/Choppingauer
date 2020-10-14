@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FileDriver
   def self.write(device, string)
     file = Rails.configuration.print_devices_path + device.to_s
