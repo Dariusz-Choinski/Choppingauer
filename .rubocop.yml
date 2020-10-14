@@ -1,3 +1,10 @@
 Documentation:
   Enabled: false
-
+AllCops:
+  Includes:
+    - config.ru
+  Excludes:
+    - bin/*
+    - db/**
+    - config/**
+    - script/**
