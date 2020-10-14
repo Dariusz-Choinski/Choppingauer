@@ -1,6 +1,6 @@
 # Choppingauer
 
-This is a skeleton application for scanning articles barcode and mimic shopping.
+This is a skeleton application for scanning articles and mimic shopping.
 There are three devices; barcode scanner, lcd display, printer. All of them are virtual.
 Scanner can be any browser or console.
 Lcd display and printer are files under directory tmp/print_devices/
