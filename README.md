@@ -11,6 +11,30 @@ Lcd display and printer are files under directory tmp/print_devices/
 After installation run specs in project directory.
 ```
 # rspec --format=documentation
+Scaner requests
+  /scan/:barcode
+  /exit
+
+FileDriver
+  write device :lcd to file lcd
+  write device :printer to file printer
+  write "0000000000" to clear printer buffer (file)
+
+ShoppingEnter
+  barcode valid
+    print article name and price to lcd
+    add article to shopping cache
+  barcode invalid
+    print "Product not found" to lcd
+
+ShoppingExit
+  clear printer buffer
+  print article 1 name and price to printer
+  print article 2 name and price to printer
+  print sum of shopping to lcd
+  print total: sum of shopping to printer
+  clear shopping cache
+
 ```
 If all specs are succefuly passed, you can start manual testing, if you wish.
 Run aplication server. Go to tmp/print_devices/ directory, then open lcd and printer files in modern editor.
