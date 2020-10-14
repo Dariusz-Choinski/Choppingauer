@@ -1,8 +1,8 @@
 class CreateArticles < ActiveRecord::Migration[6.0]
   def change
     create_table :articles do |t|
-      t.text :name
-      t.text :barcode
+      t.string :name
+      t.string :barcode
       t.integer :price
 
       t.timestamps

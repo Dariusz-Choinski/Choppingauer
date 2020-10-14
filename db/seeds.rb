@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times do |n|
+("A".."J").each do |n|
    Article.create(name: Faker::Food.unique.fruits, barcode: "1234567#{n}", price: rand(3..9))
 end
